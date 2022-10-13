@@ -6,9 +6,10 @@ const Resume = (props) => {
   return (
     <section
       className={
-        props.toggleState === 4 ? "resume container section" : " sec hide"
+        props.toggleState === 4 || window.location.pathname === "/resume"
+          ? "resume container section"
+          : " sec hide"
       }
-      id="resume"
     >
       <h2 className="section__title">Experience</h2>
       <div className="resume__container grid">

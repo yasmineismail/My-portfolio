@@ -18,7 +18,7 @@ import { useState } from "react";
 import Portfolio2 from "./components/portfolio/Portfolio2";
 import Porto from "./components/portfolio/porto";
 import Port from "./components/portfolio/Port";
-
+import { BrowserRouter, Routes, Link, Route } from "react-router-dom";
 function App() {
   const [classM, setClass] = useState("nav-menu");
   const [active, setActive] = useState("active");
@@ -37,146 +37,162 @@ function App() {
 
   return (
     <>
-      <header className="header">
-        <div className="container1">
-          <div className="row">
-            <div className="logo">
-              <a href="index.html">Y</a>
-            </div>
-            <div
-              className="hamburger-btn outer-shadow hover-in-shadow"
-              onClick={() => setClass("nav-menu open")}
-            >
-              <span></span>
+      <BrowserRouter>
+        <header className="header">
+          <div className="container1">
+            <div className="row">
+              <div className="logo">
+                <Link to="/">Y</Link>
+              </div>
+              <div
+                className="hamburger-btn outer-shadow hover-in-shadow"
+                onClick={() => setClass("nav-menu open")}
+              >
+                <span></span>
+              </div>
             </div>
           </div>
-        </div>
-      </header>
+        </header>
 
-      {/* --------------------Nav menu-------------- */}
-      <nav className={classM}>
-        <div
-          className="close-nav-menu outer-shadow hover-in-shadow"
-          onClick={() => setClass("nav-menu")}
-        >
-          &times;
-        </div>
-        <div className="nav-menu-inner">
-          <ul>
-            <li>
-              <a
-                href="#home"
-                className={
-                  toggleState === 1
-                    ? "link-item inner-shadow active"
-                    : "tlink-item outer-shadow hover-in-shadow"
-                }
-                onClick={() => toggleTab(1)}
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#about"
-                className={
-                  toggleState === 2
-                    ? "link-item inner-shadow active"
-                    : "tlink-item outer-shadow hover-in-shadow"
-                }
-                onClick={() => toggleTab(2)}
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href="#services"
-                className={
-                  toggleState === 3
-                    ? "link-item inner-shadow active"
-                    : "tlink-item outer-shadow hover-in-shadow"
-                }
-                onClick={() => toggleTab(3)}
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="#resume"
-                className={
-                  toggleState === 4
-                    ? "link-item inner-shadow active"
-                    : "tlink-item outer-shadow hover-in-shadow"
-                }
-                onClick={() => toggleTab(4)}
-              >
-                Resume
-              </a>
-            </li>
-            <li>
-              <a
-                href="#work"
-                className={
-                  toggleState === 5
-                    ? "link-item inner-shadow active"
-                    : "tlink-item outer-shadow hover-in-shadow"
-                }
-                onClick={() => {
-                  toggleTab(5);
-                  projet();
-                }}
-              >
-                Portfolio
-              </a>
-            </li>
+        {/* --------------------Nav menu-------------- */}
+        <nav className={classM}>
+          <div
+            className="close-nav-menu outer-shadow hover-in-shadow"
+            onClick={() => setClass("nav-menu")}
+          >
+            &times;
+          </div>
+          <div className="nav-menu-inner">
+            <ul>
+              <li>
+                <Link
+                  to="/"
+                  className={
+                    toggleState === 1
+                      ? "link-item inner-shadow active"
+                      : "tlink-item outer-shadow hover-in-shadow"
+                  }
+                  onClick={() => toggleTab(1)}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/about"
+                  className={
+                    toggleState === 2
+                      ? "link-item inner-shadow active"
+                      : "tlink-item outer-shadow hover-in-shadow"
+                  }
+                  onClick={() => toggleTab(2)}
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className={
+                    toggleState === 3
+                      ? "link-item inner-shadow active"
+                      : "tlink-item outer-shadow hover-in-shadow"
+                  }
+                  onClick={() => toggleTab(3)}
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/resume"
+                  className={
+                    toggleState === 4
+                      ? "link-item inner-shadow active"
+                      : "tlink-item outer-shadow hover-in-shadow"
+                  }
+                  onClick={() => toggleTab(4)}
+                >
+                  Resume
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/portfolio"
+                  className={
+                    toggleState === 5
+                      ? "link-item inner-shadow active"
+                      : "tlink-item outer-shadow hover-in-shadow"
+                  }
+                  onClick={() => {
+                    toggleTab(5);
+                    projet();
+                  }}
+                >
+                  Portfolio
+                </Link>
+              </li>
 
-            <li>
-              <a
-                href="#testimonials"
-                className={
-                  toggleState === 6
-                    ? "link-item inner-shadow active"
-                    : "tlink-item outer-shadow hover-in-shadow"
-                }
-                onClick={() => toggleTab(6)}
-              >
-                Blog
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contact"
-                className={
-                  toggleState === 7
-                    ? "link-item inner-shadow active"
-                    : "tlink-item outer-shadow hover-in-shadow"
-                }
-                onClick={() => toggleTab(7)}
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
-        {/* ------------copyright text ---------*/}
-        <p className="copyright-text">&copy; 2022 the WEBshale</p>
-      </nav>
-      {/* ------------Navigation menu end---------*/}
-      {/*  <Sidebar />
+              <li>
+                <Link
+                  to="/blog"
+                  className={
+                    toggleState === 6
+                      ? "link-item inner-shadow active"
+                      : "tlink-item outer-shadow hover-in-shadow"
+                  }
+                  onClick={() => toggleTab(6)}
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className={
+                    toggleState === 7
+                      ? "link-item inner-shadow active"
+                      : "tlink-item outer-shadow hover-in-shadow"
+                  }
+                  onClick={() => toggleTab(7)}
+                >
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+          {/* ------------copyright text ---------*/}
+          <p className="copyright-text">&copy; 2022 the WEBshale</p>
+        </nav>
+        {/* ------------Navigation menu end---------*/}
+        {/*  <Sidebar />
       <main className="main">    </main> 
 */}
+        <Routes>
+          <Route path="/" element={<Home2 toggleState={toggleState} />} />
+          <Route path="/about" element={<About toggleState={toggleState} />} />
+          <Route
+            path="/services"
+            element={<Services toggleState={toggleState} />}
+          />
+          <Route
+            path="/resume"
+            element={<Resume toggleState={toggleState} />}
+          />
+          <Route
+            path="/contact"
+            element={<Contact toggleState={toggleState} />}
+          />
+          <Route
+            path="/portfolio"
+            element={<Portfolio toggleState={toggleState} proj={proj} />}
+          />
 
-      <Home2 toggleState={toggleState} />
-      <About toggleState={toggleState} />
-      <Services toggleState={toggleState} />
-      <Resume toggleState={toggleState} />
-      {/*<Pricing toggleState={toggleState} /> 
+          {/*<Pricing toggleState={toggleState} /> 
       {/*<Testmonials toggleState={toggleState} />*/}
-      {/*<Blog toggleState={toggleState} />*/}
-      <Contact toggleState={toggleState} />
-      <Portfolio toggleState={toggleState} proj={proj} />
+          {/*<Blog toggleState={toggleState} />*/}
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

@@ -17,10 +17,12 @@
 .work__container {
   grid-template-columns: repeat(3, 1fr);
   gap: 1.875rem;
+  align-items: center;
 }
 .work__card {
   position: relative;
   overflow: hidden;
+  max-height: 90%;
   box-shadow: var(--shadow);
 }
 .work__mask {

@@ -36,9 +36,10 @@ const Portfolio = (props) => {
     <>
       <section
         className={
-          props.toggleState === 5 ? "work container section " : " sec hide"
+          props.toggleState === 5 || window.location.pathname === "/portfolio"
+            ? "work container section "
+            : " sec hide"
         }
-        id="work"
       >
         <div className={project == 0 ? "active" : "none"}>
           <h2 className="section__title">Recent Works</h2>

@@ -14,7 +14,9 @@ const Home2 = (props) => {
       {/* ------------Home section start---------*/}
       <section
         className={
-          props.toggleState === 1 ? "home-section section1 " : " sec hide"
+          props.toggleState === 1 || window.location.pathname === "/"
+            ? "home-section section1 "
+            : " sec hide"
         }
       >
         {/* ---------Effect wrap start ------  */}

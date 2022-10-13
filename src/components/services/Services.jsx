@@ -31,7 +31,9 @@ const Services = (props) => {
   return (
     <section
       className={
-        props.toggleState === 3 ? "services container section " : " sec hide"
+        props.toggleState === 3 || window.location.pathname === "/services"
+          ? "services container section "
+          : " sec hide"
       }
       id="services"
     >

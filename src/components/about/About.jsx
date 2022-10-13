@@ -3,8 +3,10 @@ import "./about.css";
 import Image from "../../assets/images/avatar-2.svg";
 import AbouBox from "./AbouBox";
 import Me from "../../assets/images/yasmine.png";
+import { Routes, Route, useParams } from "react-router-dom";
 
 const About = (props) => {
+  console.log(window.location.pathname);
   const onButtonClick = () => {
     // using Java Script method to get PDF file
     fetch("Resume-YasmineIsmail.pdf").then((response) => {
@@ -22,9 +24,10 @@ const About = (props) => {
   return (
     <section
       className={
-        props.toggleState === 2 ? "about container section " : " sec hide"
+        props.toggleState === 2 || window.location.pathname === "/about"
+          ? "about container section "
+          : " sec hide"
       }
-      id="about"
     >
       <h2 className="section__title">About Me</h2>
       <div className="about__container grid">

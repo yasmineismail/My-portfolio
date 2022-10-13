@@ -29,9 +29,10 @@ const Contact = (props) => {
   return (
     <section
       className={
-        props.toggleState === 7 ? "contact container section " : " sec hide"
+        props.toggleState === 7 || window.location.pathname === "/contact"
+          ? "contact container section "
+          : " sec hide"
       }
-      id="contact"
     >
       <h2 className="section__title">Get In Touch</h2>
       <div className="contact__container grid">
