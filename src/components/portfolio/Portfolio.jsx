@@ -5,7 +5,7 @@ import { useState } from "react";
 import Project1 from "../../assets/images/projet1.png";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { Blurhash } from "react-blurhash";
+import CircularSpinner from "./circulair";
 
 import Portfolio2 from "./Portfolio2";
 const Portfolio = (props) => {
@@ -21,17 +21,24 @@ const Portfolio = (props) => {
   const [images, setImages] = useState([]);
   const [current, setCurrent] = useState(0);
   const [length, setLength] = useState(0);
+  const [Loaded, setLoaded] = useState(false);
   const func = () => {
     if (props.proj == 1) {
       setProject(0);
     }
   };
 
+  const imageLoad = () => {
+    setLoaded(true);
+  };
+
   const nextSlide = () => {
     setCurrent(current == length - 1 ? 0 : current + 1);
+    setLoaded(false);
   };
   const prevSlide = () => {
     setCurrent(current == 0 ? length - 1 : current - 1);
+    setLoaded(false);
   };
 
   return (
@@ -145,6 +152,7 @@ const Portfolio = (props) => {
               </div>
             </div>
             <div className="separator"></div>
+
             <div className="pp-main-inner ">
               <h3>Project Details</h3>
               <div
@@ -162,19 +170,22 @@ const Portfolio = (props) => {
                 return (
                   <div key={index}>
                     {current == index && (
-                      <LazyLoadImage
-                        effect="blur"
+                      <img
                         src={slide}
                         alt="travel image"
                         className="pp-img"
+                        onLoad={imageLoad}
                       />
                     )}
                   </div>
                 );
               })}
-
+              {Loaded == false && (
+                <div className="image-container-overlay">
+                  <CircularSpinner />
+                </div>
+              )}
               {/*<div className="pp-counter">1 of 6</div>*/}
-
               <div className="pp-prev" onClick={prevSlide}>
                 <i class="fa-sharp fa-solid fa-chevron-left"></i>{" "}
               </div>
