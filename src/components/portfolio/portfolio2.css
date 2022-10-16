@@ -80,27 +80,34 @@
   display: block;
   background-color: var(--bg-black-100);
 }
+
+.portfolio-popup .pp-main {
+  max-width: 1350px;
+  width: 85%;
+  height: 100px;
+}
+.portfolio-popup .pp-main-inner {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  height: 10%;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.portfolio-popup .pp-image {
+  position: relative;
+  margin-left: 100px;
+  margin-right: 100px;
+}
 .portfolio-popup .pp-img {
   max-width: 100%;
   height: auto;
   width: auto;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
-.portfolio-popup .pp-main {
-  min-height: 100vh;
-  max-width: 1350px;
-  width: 85%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-}
-.portfolio-popup .pp-main-inner {
-  padding: 70px 0 50px;
-  position: relative;
-}
-
 .portfolio-popup .pp-project-details-btn {
   position: absolute;
   left: 0;
@@ -122,12 +129,9 @@
   border-radius: 30px;
 }
 .portfolio-popup .pp-close {
-  position: absolute;
-  right: 0;
   border-radius: 50%;
   height: 40px;
   width: 40px;
-  top: 15px;
   text-align: center;
   line-height: 35px;
   font-size: 35px;
@@ -180,4 +184,20 @@
 .portfolio-popup .pp-prev .prev,
 .portfolio-popup .pp-next .next {
   opacity: 0.7;
+}
+
+@media (max-width: 767px) {
+  .portfolio-popup .description,
+  .portfolio-popup .info {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .portfolio-popup .pp-img {
+    max-height: 500px;
+  }
+  .portfolio-popup .pp-main-inner,
+  .portfolio-popup .pp-image {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }

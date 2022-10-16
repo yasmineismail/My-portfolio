@@ -3,6 +3,9 @@ import "./portfolio.css";
 import Menu from "./Menu";
 import { useState } from "react";
 import Project1 from "../../assets/images/projet1.png";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import { Blurhash } from "react-blurhash";
 
 import Portfolio2 from "./Portfolio2";
 const Portfolio = (props) => {
@@ -17,14 +20,13 @@ const Portfolio = (props) => {
   const [name, setName] = useState("");
   const [images, setImages] = useState([]);
   const [current, setCurrent] = useState(0);
-
+  const [length, setLength] = useState(0);
   const func = () => {
     if (props.proj == 1) {
       setProject(0);
     }
   };
 
-  const length = images.length;
   const nextSlide = () => {
     setCurrent(current == length - 1 ? 0 : current + 1);
   };
@@ -71,10 +73,17 @@ const Portfolio = (props) => {
                     setProject(1);
                     setName(title);
                     setImages(images);
+                    setLength(images.length);
+                    setCurrent(0);
                   }}
                 >
                   <div className="work__thumbnal">
-                    <img src={image} alt="" className="work__img" />
+                    <LazyLoadImage
+                      effect="blur"
+                      src={image}
+                      alt=""
+                      className="work__img"
+                    />
                     <div className="work__mask"></div>
                   </div>
                   <span className="work__category">{category}</span>
@@ -136,44 +145,42 @@ const Portfolio = (props) => {
               </div>
             </div>
             <div className="separator"></div>
-            <div className="pp-main">
-              <div className="pp-main-inner ">
-                <div className="pp-project-details-btn outer-shadow hover-in-shadow">
-                  Project Details
-                  <i className="fa-solid fa-plus"></i>
-                </div>
-                <div
-                  className="pp-close outer-shadow hover-in-shadow"
-                  onClick={() => setProject(0)}
-                >
-                  &times;
-                </div>
-
-                {images.map((slide, index) => {
-                  return (
-                    <div key={index}>
-                      {current == index && (
-                        <img
-                          src={slide}
-                          alt="travel image"
-                          className="pp-img"
-                        />
-                      )}
-                    </div>
-                  );
-                })}
-
-                {/*<div className="pp-counter">1 of 6</div>*/}
-
-                <div className="pp-prev" onClick={prevSlide}>
-                  <i class="fa-sharp fa-solid fa-chevron-left"></i>{" "}
-                </div>
-                <div className="pp-next" onClick={nextSlide}>
-                  <i class="fa-sharp fa-solid fa-chevron-right"></i>{" "}
-                </div>
+            <div className="pp-main-inner ">
+              <h3>Project Details</h3>
+              <div
+                className="pp-close outer-shadow hover-in-shadow"
+                onClick={() => setProject(0)}
+              >
+                &times;
               </div>
 
               {/* ------pp navigation */}
+            </div>
+
+            <div className="pp-image">
+              {images.map((slide, index) => {
+                return (
+                  <div key={index}>
+                    {current == index && (
+                      <LazyLoadImage
+                        effect="blur"
+                        src={slide}
+                        alt="travel image"
+                        className="pp-img"
+                      />
+                    )}
+                  </div>
+                );
+              })}
+
+              {/*<div className="pp-counter">1 of 6</div>*/}
+
+              <div className="pp-prev" onClick={prevSlide}>
+                <i class="fa-sharp fa-solid fa-chevron-left"></i>{" "}
+              </div>
+              <div className="pp-next" onClick={nextSlide}>
+                <i class="fa-sharp fa-solid fa-chevron-right"></i>{" "}
+              </div>
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ import Logo from "../../assets/images/yy3.png";
 import HeaderSocials from "./HeaderSocials";
 import { useState, useEffect } from "react";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const Home2 = (props) => {
   console.log(props);
@@ -78,12 +79,12 @@ const Home2 = (props) => {
               <h2>I'm Yasmine</h2>
               <h1>Full stack developer</h1>
               <HeaderSocials />
-              <a
-                href="#about"
+              <Link
+                to="/about"
                 className="link-item btn-1 outer-shadow hover-in-shadow"
               >
                 More About Me
-              </a>
+              </Link>
             </div>
             <div className="home-img">
               <div className="img-box inner-shadow">

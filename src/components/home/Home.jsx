@@ -4,6 +4,7 @@ import HeaderSocials from "./HeaderSocials";
 import ScrollDown from "./ScrollDown";
 import Shapes from "./Shapes";
 import Me from "../../assets/images/yy3.png";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   return (
