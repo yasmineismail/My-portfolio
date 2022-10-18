@@ -42,7 +42,7 @@ const Menu = [
     id: 1,
     image: Workk,
     title: "RobotComptable website",
-    category: ["Django", "React"],
+    category: "Django",
     images: [
       Work1,
       AddAcountant,
@@ -72,7 +72,7 @@ const Menu = [
     id: 2,
     image: Work2,
     title: "Ecommerce Website",
-    category: ["Django", "React"],
+    category: "Django",
     images: [HomeEc, products, CartHome],
     description: "Ecommerce website using Django",
     info: [
@@ -85,7 +85,7 @@ const Menu = [
     id: 3,
     image: Work3,
     title: "Note Application",
-    category: ["Django", "React"],
+    category: "React",
     images: [noteapp, Note, newnote],
     description: "A NoteApp using Django to Create, Delete And update Note",
     info: [
@@ -99,9 +99,9 @@ const Menu = [
     id: 4,
     image: Work4,
     title: "Portfolio Website",
-    category: ["React"],
+    category: "React",
     images: [Home, about, services, experience, works, personal, contact],
-    description: "A NoteApp using Django to Create, Delete And update Note",
+    description: "Portfolio App to show works and services",
     info: [
       "September 2022",
       "ReactJs, Html, Css",
