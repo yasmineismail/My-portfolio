@@ -1,8 +1,11 @@
 import "./contact.css";
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const Contact = (props) => {
+  const [Msg, setMessage] = useState("");
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -24,6 +27,7 @@ const Contact = (props) => {
         }
       );
     e.target.reset();
+    toast.success("Successfully Sended!");
   };
 
   return (
@@ -39,8 +43,15 @@ const Contact = (props) => {
         <div className="contact__info">
           <h3 className="contact__title">Let's talk about everything!</h3>
           <p className="contact__details">
-            Don't like forms? Send me an email. 👋{" "}
+            Don't like forms? Send me an email. 👋
           </p>
+
+          <div className="info">
+            <h3>Email :</h3> <p>yasmineiismail@gmail.com</p>
+            {/* <div className="separator"></div> */}
+            <h3>Phone :</h3>
+            <p> +216 92-975-743</p>
+          </div>
         </div>
         <form ref={form} onSubmit={sendEmail} className="contact__form">
           <div className="contact__form-group">
@@ -50,6 +61,7 @@ const Contact = (props) => {
                 type="text"
                 className="contact__form-input"
                 placeholder="Insert your name"
+                required
               />
             </div>
 
@@ -59,6 +71,7 @@ const Contact = (props) => {
                 type="email"
                 className="contact__form-input"
                 placeholder="Insert your email"
+                required
               />
             </div>
           </div>
@@ -68,6 +81,7 @@ const Contact = (props) => {
               type="text"
               className="contact__form-input"
               placeholder="Insert your subject"
+              required
             />
           </div>
 
@@ -79,12 +93,15 @@ const Contact = (props) => {
               rows="10"
               className="contact__form-input"
               placeholder="Write your message"
+              required
             ></textarea>
           </div>
-          <button className="link-item btn-1 outer-shadow hover-in-shadow">
+          <button className="link-item btn-1 outer-shadow hover-in-shadow ">
             Send Message
           </button>
         </form>
+
+        <Toaster position="top-right" />
       </div>
     </section>
   );

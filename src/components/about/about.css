@@ -58,16 +58,16 @@
 .skills__percentage {
   display: block;
 }
-.development {
-  width: 90%;
+.frontend {
+  width: 50%;
   background-color: rgb(255, 209, 92);
 }
-.ui__design {
-  width: 80%;
+.backend {
+  width: 60%;
   background-color: rgb(255, 76, 96);
 }
-.photography {
-  width: 60%;
+.problem {
+  width: 50%;
   background-color: rgb(108, 108, 299);
 }
 
@@ -111,6 +111,10 @@
     row-gap: 0.5rem;
     text-align: center;
   }
+}
+.about__skills a {
+  width: 160px;
+  margin-left: 70px;
 }
 @media screen and (max-width: 768px) {
   .about__container {

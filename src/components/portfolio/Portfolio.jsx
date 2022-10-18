@@ -19,14 +19,12 @@ const Portfolio = (props) => {
   const [project, setProject] = useState(0);
   const [name, setName] = useState("");
   const [images, setImages] = useState([]);
+  const [description, setDescription] = useState();
+  const [info, setInfo] = useState([]);
+  const [category, setCategory] = useState();
   const [current, setCurrent] = useState(0);
   const [length, setLength] = useState(0);
   const [Loaded, setLoaded] = useState(false);
-  const func = () => {
-    if (props.proj == 1) {
-      setProject(0);
-    }
-  };
 
   const imageLoad = () => {
     setLoaded(true);
@@ -56,22 +54,17 @@ const Portfolio = (props) => {
             <span className="work__item" onClick={() => setItems(Menu)}>
               Everything
             </span>
-            <span className="work__item" onClick={() => filterItem("Creative")}>
-              Creative
+            <span className="work__item" onClick={() => filterItem("Django")}>
+              Django
             </span>
-            <span className="work__item" onClick={() => filterItem("Art")}>
-              Art
-            </span>
-            <span className="work__item" onClick={() => filterItem("Design")}>
-              Design
-            </span>
-            <span className="work__item" onClick={() => filterItem("Branding")}>
-              Branding
+            <span className="work__item" onClick={() => filterItem("React")}>
+              React
             </span>
           </div>
           <div className="work__container grid">
             {items.map((elem) => {
-              const { id, image, title, category, images } = elem;
+              const { id, image, title, category, images, description, info } =
+                elem;
               return (
                 <div
                   className="work__card outer-shadow"
@@ -82,6 +75,9 @@ const Portfolio = (props) => {
                     setImages(images);
                     setLength(images.length);
                     setCurrent(0);
+                    setDescription(description);
+                    setInfo(info);
+                    setCategory(category);
                   }}
                 >
                   <div className="work__thumbnal">
@@ -95,7 +91,7 @@ const Portfolio = (props) => {
                   </div>
                   <span className="work__category">{category}</span>
                   <h3 className="work__title">{title}</h3>
-                  <a href="" className="work__button">
+                  <a className="work__button">
                     <i className="icon-link work__button-icon"></i>
                   </a>
                 </div>
@@ -112,39 +108,29 @@ const Portfolio = (props) => {
                   <h2>Personal potfolio</h2>
                   <p>
                     Category -{" "}
-                    <span className="pp-project-category">Web Application</span>
+                    <span className="pp-project-category">{category}</span>
                   </p>
                 </div>
                 <div className="pp-project-details">
                   <div className="row">
                     <div className="description">
                       <h3>{name}</h3>
-                      <p>
-                        {" "}
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Alias, eaque? Nemo, earum. Dolorum culpa tenetur ad
-                        quisquam quod perferendis dolor vero unde voluptates
-                        incidunt, eum est, vitae veniam vel quae.
-                      </p>
+                      <p> {description}</p>
                     </div>
                     <div className="info">
                       <h3>Project Info</h3>
                       <ul>
                         <li>
-                          Date - <span>2020</span>
+                          Date - <span>{info[0]}</span>
                         </li>
+
                         <li>
-                          Client - <span>xyz</span>
+                          Tools - <span>{info[1]}</span>
                         </li>
-                        <li>
-                          Tools - <span>html, css, javascript</span>
-                        </li>
-                        <li>
+                        {/*<li>
                           web -{" "}
-                          <span>
-                            <a href="#">www.domain.com</a>
-                          </span>
-                        </li>
+                          <span>{/*<a href={info[2]}>{info[2]}</a></span>
+                        </li>*/}
                       </ul>
                     </div>
                   </div>
@@ -193,6 +179,7 @@ const Portfolio = (props) => {
                 <i class="fa-sharp fa-solid fa-chevron-right"></i>{" "}
               </div>
             </div>
+            <div className="space"></div>
           </div>
         </div>
       </section>

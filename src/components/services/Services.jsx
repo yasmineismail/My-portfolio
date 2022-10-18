@@ -1,29 +1,28 @@
 import React from "react";
 import "./services.css";
-import Image1 from "../../assets/images/service-1.svg";
+import Image1 from "../../assets/images/frontendsvg.svg";
 import Image2 from "../../assets/images/service-2.svg";
-import Image3 from "../../assets/images/service-3.svg";
+import Image3 from "../../assets/images/databasesvg.svg";
 const data = [
   {
     id: 1,
     image: Image1,
-    title: "UI/UX design",
+    title: "Front-end web development",
     description:
-      "Lorem ipsum dolor sit amet consectetuer adipiscing elit         aenean commodo ligula eget.",
+      "Writing optimized front-end code with React js ,HTML , CSS and JavaScript.",
   },
   {
     id: 2,
     image: Image2,
-    title: "Web Development",
+    title: "Backend-end web development",
     description:
-      "Lorem ipsum dolor sit amet consectetuer adipiscing elit         aenean commodo ligula eget.",
+      "Creating custom APIs and writing backend code in Python and Django.",
   },
   {
     id: 3,
     image: Image3,
-    title: "Photography",
-    description:
-      "Lorem ipsum dolor sit amet consectetuer adipiscing elit         aenean commodo ligula eget.",
+    title: "Databases",
+    description: "Creating and querying databases .",
   },
 ];
 

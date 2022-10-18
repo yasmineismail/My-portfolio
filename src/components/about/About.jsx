@@ -35,9 +35,11 @@ const About = (props) => {
         <div className="about__data grid">
           <div className="about__info">
             <p className="about__description">
-              I am Yasmine Ismail, Full Stack web developer from Tunisia,based
-              in UAE. I have rich experience in web site design and building and
-              customization.
+              I am Yasmine Ismail, Junior Full Stack web developer from Tunisia,
+              based in UAE. I have one year of experience in web development,
+              including front-end and back-end technologies and I'm passionate
+              for learning new technologies and working with teams to create
+              user-friendly web applications.
             </p>
             <a
               className="link-item btn-1 outer-shadow hover-in-shadow"
@@ -49,35 +51,35 @@ const About = (props) => {
           <div className="about__skills grid">
             <div className="skills__data">
               <div className="skills__titles">
-                <h3 className="skills__name">Development</h3>
-                <span className="skills__number ">90%</span>
+                <h3 className="skills__name">Front-End</h3>
+                <span className="skills__number ">50%</span>
               </div>
               <div className="skills__bar">
-                <span className="skills__percentage development"></span>
+                <span className="skills__percentage frontend"></span>
               </div>
             </div>
             <div className="skills__data">
               <div className="skills__titles">
-                <h3 className="skills__name">UI/UX design</h3>
-                <span className="skills__number ">80%</span>
-              </div>
-              <div className="skills__bar">
-                <span className="skills__percentage ui__design"></span>
-              </div>
-            </div>
-            <div className="skills__data">
-              <div className="skills__titles">
-                <h3 className="skills__name">Photography</h3>
+                <h3 className="skills__name">Back-End</h3>
                 <span className="skills__number ">60%</span>
               </div>
               <div className="skills__bar">
-                <span className="skills__percentage photography"></span>
+                <span className="skills__percentage backend"></span>
+              </div>
+            </div>
+            <div className="skills__data">
+              <div className="skills__titles">
+                <h3 className="skills__name">Problem Solving</h3>
+                <span className="skills__number ">50%</span>
+              </div>
+              <div className="skills__bar">
+                <span className="skills__percentage problem"></span>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <AbouBox />
+      {/*<AbouBox />*/}
     </section>
   );
 };

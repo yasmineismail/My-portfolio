@@ -77,7 +77,7 @@ const Home2 = (props) => {
             <div className="home-text">
               <p>Hello</p>
               <h2>I'm Yasmine</h2>
-              <h1>Full stack developer</h1>
+              <h1>Junior Full stack developer</h1>
               <HeaderSocials />
               <Link
                 to="/about"

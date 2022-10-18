@@ -23,16 +23,26 @@ import HomeEc from "../../assets/images/HomeEc.png";
 import products from "../../assets/images/products.png";
 import CartHome from "../../assets/images/CartHome.png";
 
-import Work3 from "../../assets/images/work-3.svg";
-import Work4 from "../../assets/images/work-4.svg";
-import Work5 from "../../assets/images/work-5.svg";
-import Work6 from "../../assets/images/work-6.svg";
+import Work3 from "../../assets/images/NoteAppList.png";
+import noteapp from "../../assets/images/noteapp.png";
+import Note from "../../assets/images/Note.png";
+import newnote from "../../assets/images/newnote.png";
+
+import Work4 from "../../assets/images/work4Portfolio.png";
+import Home from "../../assets/images/HomeY.png";
+import about from "../../assets/images/about.png";
+import services from "../../assets/images/services.png";
+import experience from "../../assets/images/experience.png";
+import contact from "../../assets/images/contact.png";
+import works from "../../assets/images/works.png";
+import personal from "../../assets/images/Personal.png";
+
 const Menu = [
   {
     id: 1,
     image: Workk,
-    title: "Project Management Illustration",
-    category: "Design",
+    title: "RobotComptable website",
+    category: ["Django", "React"],
     images: [
       Work1,
       AddAcountant,
@@ -50,40 +60,53 @@ const Menu = [
       SelctZones,
       selectZones,
     ],
+    description:
+      "  Web application for accounting firm allows managing agents, customers, bills, and invoices. Using OCR technology, I was able to improve the platform by extract all the details from scanned invoices and convert them into editable data online to achieve easy and fast management of daily accounting operations.",
+    info: [
+      "March – October 2021",
+      "Django, React, Bootstrap, Ocr",
+      "https://github.com/yasmineismail/Ecommerce-Django-",
+    ],
   },
   {
     id: 2,
     image: Work2,
-    title: "Guest App Walkthrough Screens",
-    category: "Art",
+    title: "Ecommerce Website",
+    category: ["Django", "React"],
     images: [HomeEc, products, CartHome],
+    description: "Ecommerce website using Django",
+    info: [
+      "January – March 2022",
+      "Django, Python, Bootstrap",
+      "https://github.com/yasmineismail/Ecommerce-Django-",
+    ],
   },
   {
     id: 3,
     image: Work3,
-    title: "Delivery App Wireframe",
-    category: "Branding",
+    title: "Note Application",
+    category: ["Django", "React"],
+    images: [noteapp, Note, newnote],
+    description: "A NoteApp using Django to Create, Delete And update Note",
+    info: [
+      "December 2021",
+      "React, Django, Html, Css",
+      "https://github.com/yasmineismail/ReactDjango-NoteApp",
+    ],
   },
 
   {
     id: 4,
     image: Work4,
-    title: "Onboarding Motivation",
-    category: "Design",
-  },
-
-  {
-    id: 5,
-    image: Work5,
-    title: "iMac Mockup Design",
-    category: "Creative",
-  },
-
-  {
-    id: 6,
-    image: Work6,
-    title: "Game Store App Concept",
-    category: "Art",
+    title: "Portfolio Website",
+    category: ["React"],
+    images: [Home, about, services, experience, works, personal, contact],
+    description: "A NoteApp using Django to Create, Delete And update Note",
+    info: [
+      "September 2022",
+      "ReactJs, Html, Css",
+      "https://github.com/yasmineismail/My-portfolio",
+    ],
   },
 ];
 

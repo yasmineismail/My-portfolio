@@ -133,8 +133,8 @@ function App() {
                 </Link>
               </li>
 
-              <li>
-                <Link
+              {/*   <li>
+               <Link
                   to="/blog"
                   className={
                     toggleState === 6
@@ -143,9 +143,8 @@ function App() {
                   }
                   onClick={() => toggleTab(6)}
                 >
-                  Blog
                 </Link>
-              </li>
+                </li>*/}
               <li>
                 <Link
                   to="/contact"

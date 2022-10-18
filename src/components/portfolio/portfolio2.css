@@ -109,8 +109,10 @@
   align-items: center;
   justify-content: center;
 }
-.pp-image .blursh {
+.portfolio-popup .space {
+  height: 200px;
 }
+
 .portfolio-popup .pp-img {
   padding: 10px;
   border-radius: 10px;
